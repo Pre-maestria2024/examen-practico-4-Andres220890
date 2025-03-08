@@ -6,7 +6,7 @@ def main():
 
 # Calculamos el HN máximo
 total = 0
-for x in d:
+for x in D:
     total += x
 
 # El problema se modela como un DP mochila
@@ -20,11 +20,11 @@ mn_value = total
 for i in range(m):
     for j in reversed(range(n)):
         # Si el peso excede a n, minimizamos nuestro valor de mn_value
-        if j + h[i] >= n:
-            mn_value = min(mn_value, dp[j] + d[i])
-        # En otro caso, calculamos dp[j+h[i]]
+        if j + H[i] >= n:
+            mn_value = min(mn_value, dp[j] + D[i])
+        # En otro caso, calculamos dp[j+H[i]]
         else:
-            dp[j+h[i]] = min(dp[j+h[i]], dp[j] + d[i])
+            dp[j+H[i]] = min(dp[j+H[i]], dp[j] + D[i])
 	
 if __name__ == '__main__':
 	main()
